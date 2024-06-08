@@ -2,18 +2,19 @@
 {
     public class ObtenerDatosMapa
     {
-         public string NombrePiso { get; set; }
+         public string IdZona { get; set; }
+        public string CodigoZona { get; set; }
         public string Coordenadas { get; set; }
 
-        public string NombreFilial { get; set; }
        public string Categoria { get; set; }
 
-        public ObtenerDatosMapa(string nombrePiso, string coordenadas, string categoria, string nombreFilial)
+        public ObtenerDatosMapa(string idZona, string coordenadas, string categoria, string codigoZona)
         {
-            this.NombrePiso = nombrePiso;
+            this.IdZona = idZona;
             this.Coordenadas = coordenadas;
             this.Categoria = categoria;
-            this.NombreFilial = nombreFilial;
+            this.CodigoZona= codigoZona;
+
         }
     }
 }
