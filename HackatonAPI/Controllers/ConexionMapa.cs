@@ -7,7 +7,7 @@ namespace HackatonAPI.Controllers
         SqlConnection conex = new SqlConnection();
 
         static string servidor = "localhost";
-        static string bd = "mapa";
+        static string bd = "mapa_db";
         static string user = "prueba1";
         static string pass = "123";
         static string port = "50399";
