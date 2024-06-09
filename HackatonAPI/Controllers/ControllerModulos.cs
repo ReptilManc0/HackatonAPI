@@ -34,6 +34,7 @@ namespace HackatonAPI.Controllers
             }
 
             dr.NextResult();
+
             while (dr.Read())
             {
                 string categoria = dr.GetString(0);

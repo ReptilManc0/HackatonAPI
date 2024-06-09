@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Data.SqlTypes;
 namespace HackatonAPI.Controllers
 {
+    [ApiController]
     public class ControllerForo : ControllerBase
     {
         [HttpGet]

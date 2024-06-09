@@ -76,6 +76,7 @@ namespace HackatonAPI.Controllers
             //DataSet
 
         }
+        /*
         [HttpGet]
         [Route("/pruebaselect")]
         public dynamic pruebaSelect()
@@ -103,6 +104,32 @@ namespace HackatonAPI.Controllers
 
             //DataSet
 
+        }
+        */
+        [HttpPost]
+        [Route("/ObtenerDetallesZona")]
+        public dynamic obtenerDetallesZona(int idZona)
+        {
+            Conexion con = new Conexion();
+            List<DetallesZona> detZona = new List<DetallesZona>();
+            string query = "exec sp_obtener_detalles_por_zona @idZona='"+idZona+"'";
+            SqlCommand cmd = new SqlCommand(query, con.conectarmapa());
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                string descripcion;
+                int mesa;
+                int silla;
+                int banquito;
+                int expendedoraBebida;
+                int expendedoraSnack;
+                int expendedoraCafe;
+                int puff;
+                int pupitres;
+                int computadora;
+
+    }
+            return detZona;
         }
 
     }
