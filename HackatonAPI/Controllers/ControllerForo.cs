@@ -44,6 +44,40 @@ namespace HackatonAPI.Controllers
            
         }
 
+        [HttpPost]
+        [Route("/CrearForo")]
+        public dynamic crearForo(ForoCrear f)
+        {
+
+            try
+            {
+                Conexion cu = new Conexion();
+                string query = "EXEC spi_crear_tema_foro @id_estudiante='"+f.idEstudiante+"', @titulo='"+f.titulo+"',@contenido='"+f.contenido+"' ;";
+                SqlCommand cmd = new SqlCommand(query, cu.conectaruniversidad());
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                cu.CerrarConexion();
+                return new
+                {
+                    success = true,
+                    message = "registro completado",
+                    result = f,
+
+                };
+
+            }
+            catch (Exception ex)
+            {
+                return new
+                {
+                    success = false,
+                    message = "error" + ex.Message,
+                };
+            }
+
+
+
+        }
 
 
 
@@ -53,7 +87,6 @@ namespace HackatonAPI.Controllers
 
 
 
-        
         [HttpPost]
         [Route("/ObtenerRespuestas")]
         public dynamic obtenerRespuestas(string foroID){
