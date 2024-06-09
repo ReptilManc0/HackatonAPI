@@ -83,10 +83,6 @@ namespace HackatonAPI.Controllers
 
 
 
-
-
-
-
         [HttpPost]
         [Route("/ObtenerRespuestas")]
         public dynamic obtenerRespuestas(string foroID){

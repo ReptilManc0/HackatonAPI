@@ -40,11 +40,11 @@ namespace HackatonAPI.Controllers
 
         [HttpPost]
         [Route("/obtenerLogrosdesbloqueados")]
-        public dynamic obtenerlogrosdesbloqueados(int IdEstudiante)
+        public dynamic obtenerlogrosdesbloqueados(IdZona IdEstudiante)
         {
             Conexion cu = new Conexion();
             ArrayList logrosdesbloqueados = new ArrayList();
-            string query = "exec sp_obtener_logros_y_progresos @id_estudiante=" + IdEstudiante;
+            string query = "exec sp_obtener_logros_y_progresos @id_estudiante=" + IdEstudiante.id;
             SqlCommand cmd = new SqlCommand(query, cu.conectaruniversidad());
             SqlDataReader dr = cmd.ExecuteReader();    
             dr.NextResult();
