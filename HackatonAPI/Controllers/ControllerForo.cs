@@ -30,10 +30,10 @@ namespace HackatonAPI.Controllers
                     string Contenido = dr.GetString(4);
                     int NumeroLikes = dr.GetInt32(5);
                     string FechaPublicacion = dr.GetString(6);
-                    string FechaEdicion = dr.GetString(7); 
 
 
-                    DatosForo datos = new DatosForo(IDForo, IDEstudiante, NombreEstudiante, Titulo, Contenido, NumeroLikes, FechaPublicacion, FechaEdicion);
+
+                    DatosForo datos = new DatosForo(IDForo, IDEstudiante, NombreEstudiante, Titulo, Contenido, NumeroLikes, FechaPublicacion);
 
                     lista.Add(datos);
                 }
@@ -43,6 +43,16 @@ namespace HackatonAPI.Controllers
 
            
         }
+
+
+
+
+
+
+
+
+
+
         
         [HttpPost]
         [Route("/ObtenerRespuestas")]

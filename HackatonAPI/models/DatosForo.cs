@@ -13,9 +13,9 @@ namespace HackatonAPI.models
         public string Contenido{ get; set; }
         public int NumeroLikes{ get; set; }
         public string FechaPublicacion{ get;set; }
-        public string FechaEdicion { get; set; }
+
         
-        public DatosForo(int idForo, int idEstudiante, string nombreEstudiante, string titulo, string contenido, int numeroLikes, string fechaPublicacion, string fechaEdicion)
+        public DatosForo(int idForo, int idEstudiante, string nombreEstudiante, string titulo, string contenido, int numeroLikes, string fechaPublicacion)
         {
             IdForo = idForo;
             IdEstudiante = idEstudiante;
@@ -24,7 +24,7 @@ namespace HackatonAPI.models
             Contenido = contenido;
             NumeroLikes = numeroLikes;
             FechaPublicacion = fechaPublicacion;
-            FechaEdicion = fechaEdicion;
+
         }
         
 
