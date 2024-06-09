@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HackatonAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2f9d83df2259eba9db2ea2472ed5cde9997f4e7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f10dfc3b59002f0085bcb8634afee4a25ff5403f")]
 [assembly: System.Reflection.AssemblyProductAttribute("HackatonAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HackatonAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,7 +2,7 @@
 
 namespace HackatonAPI.Controllers
 {
-    public class ConexionMapa
+    public class Conexion
     {
         SqlConnection conex = new SqlConnection();
 
@@ -14,13 +14,28 @@ namespace HackatonAPI.Controllers
 
         string lineaconexion = "Data Source=" + servidor + "," + port + ";" + "user id=" + user + ";password=" + pass + ";" + "Initial Catalog=" + bd + ";" + "Persist Security Info=true";
 
-        public SqlConnection conectar()
+        public SqlConnection conectarmapa()
         {
 
             try
             {
 
-                conex.ConnectionString = lineaconexion;
+                conex.ConnectionString = "Data Source=" + servidor + "," + port + ";" + "user id=" + user + ";password=" + pass + ";" + "Initial Catalog= mapa_db;" + "Persist Security Info=true";
+                conex.Open();
+                Console.WriteLine("se establecio la conexión");
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return conex;
+        }
+        public SqlConnection conectaruniversidad()
+        {
+            try
+            {
+
+                conex.ConnectionString = "Data Source=" + servidor + "," + port + ";" + "user id=" + user + ";password=" + pass + ";" + "Initial Catalog= universidad_db;" + "Persist Security Info=true";
                 conex.Open();
                 Console.WriteLine("se establecio la conexión");
             }

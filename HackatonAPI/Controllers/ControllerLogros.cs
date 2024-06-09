@@ -16,10 +16,10 @@ namespace HackatonAPI.Controllers
         [HttpGet]
         [Route("/obtenerLogros")]
         public dynamic obtenerlogros() {
-            ConexionUniversidad cu = new ConexionUniversidad();
+            Conexion cu = new Conexion();
             List<logros> listadoclientes = new List<logros> { };
             string query = "exec spc_obtener_logros";
-            SqlCommand cmd = new SqlCommand(query, cu.conectar());
+            SqlCommand cmd = new SqlCommand(query, cu.conectaruniversidad());
             SqlDataReader dr = cmd.ExecuteReader();
             int i = 0;
             while (dr.Read())
