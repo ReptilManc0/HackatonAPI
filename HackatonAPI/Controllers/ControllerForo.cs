@@ -71,6 +71,40 @@ namespace HackatonAPI.Controllers
             return ListaRespuestas;
 
         }
+        [HttpPost]
+        [Route("/GuardarRespuestas")]
+        public dynamic guardarRespuestas(Respuesta r)
+        {
+           
+            try
+            {
+                Conexion cu = new Conexion();
+                string query = "EXEC spc_guardar_respuesta @id_foro = " + r.IdForo + ", @id_estudiante = " + r.IdEstudiante + ", @contenido = '" + r.Contenido + "';";
+                SqlCommand cmd = new SqlCommand(query, cu.conectaruniversidad());
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                cu.CerrarConexion();
+                return new
+                {
+                    success = true,
+                    message = "registro completado",
+                    result = r,
+
+                };
+
+            }
+            catch (Exception ex)
+            {
+                return new
+                {
+                    success = false,
+                    message = "error" + ex.Message,
+                };
+            }
+            
+           
+
+        }
 
     }
 }

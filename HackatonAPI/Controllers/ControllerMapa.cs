@@ -108,27 +108,29 @@ namespace HackatonAPI.Controllers
         */
         [HttpPost]
         [Route("/ObtenerDetallesZona")]
-        public dynamic obtenerDetallesZona(int idZona)
+        public dynamic obtenerDetallesZona(IdZona idZona)
         {
             Conexion con = new Conexion();
             List<DetallesZona> detZona = new List<DetallesZona>();
-            string query = "exec sp_obtener_detalles_por_zona @idZona='"+idZona+"'";
+            string query = "exec sp_obtener_detalles_por_zona @idZona="+idZona.id;
             SqlCommand cmd = new SqlCommand(query, con.conectarmapa());
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                string descripcion;
-                int mesa;
-                int silla;
-                int banquito;
-                int expendedoraBebida;
-                int expendedoraSnack;
-                int expendedoraCafe;
-                int puff;
-                int pupitres;
-                int computadora;
+                string descripcion=dr.GetString(0);
+                int mesa=dr.GetInt32(1);
+                int silla = dr.GetInt32(2);
+                int banquito = dr.GetInt32(3);
+                int expendedoraBebida = dr.GetInt32(4);
+                int expendedoraSnack = dr.GetInt32(5);
+                int expendedoraCafe = dr.GetInt32(6);
+                int puff = dr.GetInt32(7);
+                int pupitres = dr.GetInt32(8);
+                int computadora = dr.GetInt32(9);
 
-    }
+                DetallesZona dz = new DetallesZona(descripcion,mesa,silla,banquito,expendedoraBebida,expendedoraSnack,expendedoraCafe,puff,pupitres,computadora);
+                detZona.Add(dz);
+            }
             return detZona;
         }
 
