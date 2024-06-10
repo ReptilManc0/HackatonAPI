@@ -14,7 +14,7 @@ namespace HackatonAPI.Controllers
         [HttpGet]
         [Route("/ObtenerDatosCatModulo")]
         public dynamic obtenerDatosCatModulo() {
-            Dictionary<string, ArrayList> resultadofinal = new Dictionary<string, ArrayList> {};
+            Dictionary<string, List<string>> resultadofinal = new Dictionary<string, List<string>> {};
 
             Conexion cu = new Conexion();
             List<Categoria> listacats = new List<Categoria> { };
@@ -45,7 +45,7 @@ namespace HackatonAPI.Controllers
             }
             
             foreach (Categoria c in listacats) {
-                ArrayList arrayList = new ArrayList();
+                List<string> arrayList = new List<string>();
                 foreach (CatModulo l in listacatmod)
                 {
                     if (l.Categoria.Equals(c.NombreCategoria)) { 
